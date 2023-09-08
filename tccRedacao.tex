@@ -1,0 +1,264 @@
+\documentclass[
+  tccRedacao,           % tipo de trabalho: tccProposta, tccRedacao, relatorioEstagio
+  12pt,                 % tamanho da fonte (12pt, como recomendado pela ABNT NBR 14724)
+  twoside,              % impressão: oneside (apenas no anverso); twoside (anverso e verso)
+  a4paper,              % tamanho da folha 
+  chapter=TITLE,        % título do capítulo em CAIXA ALTA
+  english,              % hifenizar palavras em inglês (no abstract, por exemplo)
+  brazil                % hifenizar palavras em português-brasileiro (padrão no abntex2). Deve ser incluída em caso de mais de um idioma.
+]{fisufpel-abntex2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Macros abntex2 para configuração do documento (autor, titulo, orientação ....)
+%%
+%
+% Autor. Para varios autores use \and entre eles. A impressão é feita pela macro \imprimirautor da abntex2
+%
+\autor{Nome Sobrenome}           % Nome completo do autor 
+\autortrabalho{Sobrenome}{Nome}  % {Sobrenome}{Nome}, usado no resumo, abstract e ficha catalográfica
+%
+% Titulo do trabalho (língua vernácula). A impressão é feita pela macro \imprimirtitulo da abntex2
+%
+\titulo{??Título do TCC??}         % título do TCC
+\subtitulo{??se houver??}         % subtítulo. Digitar tudo em minúsculo. Deixar em branco se não houver subtítulo
+%
+% Titulo do trabalho (em inglês).
+%
+\titleA{??TCC Title??}    % no idioma secundario
+\subtitleA{?? if nedeed??}       % subtítulo. Deixar em branco se não houver
+% 
+% Localidade: cidade da defesa. Colocar sigla do estado para cidades com mesmo nome. A impressão é feita pela macro \imprimirlocal da abntex2
+% 
+\local{Pelotas}  % cidade 
+%
+% Data: ano de depósito. A impressão é feita pela macro \imprimirdata da abntex2
+%
+\data{\the\year}  % ano de defesa, usado na capa. Pode ser passado um ano especifico: \data{2018}
+%
+% Instituição. A impressão é feita pela macro \imprimirinstituicao da abntex2 
+%
+\instituicao{Universidade Federal de Pelotas}
+%
+% Unidade. A impressão é feita pela nova macro \imprimirunidade  
+%
+\unidade{Instituto de Física e Matemática}
+%
+% Curso
+%
+\curso{Curso de Bacharelado em Física}   
+%
+% Orientador. A impressão é feita pela macro \imprimirorientador. O rótulo [...] pode ser impresso pela macro \imprimirorientadorRotulo
+%
+\orientador[Orientador]{Nome do orientador}      % em caso de orientadora, mudar rótulo para [Orientadora]
+\nomeorientador{Sobrenome}{Nome}                 % para ser usado na ficha catalográfica
+\titulacaoorientador{Titulação do orientador}    % em caso de orientadora, mudar para Doutora em ????
+%
+% Coorientador. A impressão é feita pela macro \imprimircoorientador. O rótulo [...] pode ser impresso pela macro \imprimircoorientadorRotulo 
+%
+\coorientador[]{}            %  se não tiver coorientador, deixar os dois campos em branco.
+\nomecoorientador{}{}        %  use no formato {Sobrenome}{Nome}, para ser usado na ficha catalográfica
+%
+% Tipo do Trabalho. A impressão é feita pela macro \imprimirtipotrabalho da abntex2
+%
+\tipotrabalho{Trabalho de Conclusão de Curso}
+%
+% Codigo cutter para ficha catalográfica (obrigatória para versão final do TCC)
+%
+\cutter{} % Se não tiver, deixe em branco
+%
+% código CDD para ficha catalográfica (se não tiver, deixe em branco)
+%
+\CDD{}
+%
+%  bibliotecário: CRB e Nome Completo do bibliotecário (para a ficha catalográfica)
+%
+\bibliotecario{}{}
+%
+% data de aprovação
+%
+\datadefesa{\today}  % colocar a data da defesa no formato dia do mês de ano (por exemplo: 12 de junho de 2019)
+%
+% Membros da Banca (outros, além do Orientador. Utilize o formato \membroA{Titulo}{Nome}{instituição})
+%                        para o Título, use a titulação dos membros da banca como declarado nos CVs.
+%                        A instituição é a de origem do docente.
+%
+\membroA{Doutor em ???}{??? membro 1 ???}{Universidade ???}  
+\membroB{Doutor em ???}{??? membro 2 ???}{Universidade ???}    
+\membroC{Doutor em ???}{??? membro 3 ???}{Universidade ???}     
+
+% Palavras Chaves (Portugues): A-J
+\chaveA{Palavra 1}
+\chaveB{Palavra 2}
+\chaveC{Palavra 3}
+%=================================
+
+% Palavras Chaves (Ingles): A-J
+\keywordA{Keyword 1}
+\keywordB{Keyword 2}
+\keywordC{Keyword 3}
+%=================================
+
+\ifpdf
+\pdfcompresslevel 9  %% nível de compressão (0 -- 9)
+\fi
+
+\makeindex  %  compila o indice (não retirar)
+
+%%
+%%    INICIO DO DOCUMENTO
+%%
+
+\begin{document}
+
+\OnehalfSpacing    % Espaçamento entre linhas igual a um espaço e meio (1.5) -- Não retirar
+
+%%
+%%  Elemento externo (não incluído na contagem do número de páginas totais)
+%%
+\imprimircapa     % macro da abntex2 para CAPA (obrigatória no TCC)
+
+\pretextual 
+
+%%
+%% ELEMENTOS PRÉ-TEXTUAIS (são incluídos na contagem de páginas totais)
+%%
+%%    Comente os elementos opcionais abaixo caso não os deseje.
+%%
+\imprimirfolhaderosto         % macro da abntex2 para Folha de Rosto (obrigatória) SEM Ficha Catalográfica no verso 
+%\imprimirfolhaderosto*       %   usada na versão frente e verso (twoside) do TCC E com a Ficha Catalográfica no verso 
+
+%\imprimirfichacatalografica   % Ficha Catalográfica (obrigatória no TCC, após aprovação)
+%\includepdf{ficha.pdf}        % Ficha Catalográfica (obrigatória no TCC, após aprovação para homologar)
+
+\imprimirfolhadeaprovacao     % Folha de Aprovação, para assinar no dia da defesa (obrigatória)
+
+%\includepdf{folhadeaprovacao_digitalizada.pdf}   % Folha de Aprovação digitalizada (obrigatória para versão aprovada) 
+
+\include{./docs/dedicatoria}    % dedicatória (opcional)
+\include{./docs/agradecimentos} % agradecimentos (opcional)
+\include{./docs/epigrafe}       % epígrafe (opcional)
+\include{./docs/resumo}         % resumo (obrigatória apenas no TCC)
+\include{./docs/abstract}       % abstract (obrigatória apenas no TCC)
+%
+% LISTA DE FIGURAS, CÓDIGOS E TABELAS
+% ================================================
+
+\listoffigures  % Lista de Figuras (obrigatória apenas no TCC)
+%
+% não retirar a estrutura abaixo
+%
+\pdfbookmark[0]{\lstlistlistingname}{lol}
+\begin{KeepFromToc}  % comando KeepFromToc é usado para que a "Lista de códigos" não seja inseridas no Sumário. 
+\lstlistoflistings   % Lista de códigos fonte (opcional).
+                     % Usa pacote listings. O ambiente do código está definido para Fortran 90. 
+\end{KeepFromToc}
+\cleardoublepage
+%
+
+\listoftables  % Lista de Tabelas (opcional)
+
+% ================================================
+% LISTA DE SIGLAS E ABREVIATURAS 
+% ==============================================================
+\include{./docs/abreviaturasesiglas}  % Lista de Abreviaturas e Siglas (opcional)
+% ==============================================================
+% LISTA DE SÍMBOLOS
+% ==============================================================
+\include{./docs/simbolos}   % Lista de Símbolos (opcional)
+%
+% SUMÁRIO
+% ==============================================================
+\renewcommand\contentsname{Sumário}  % não retirar
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*       % Sumário (obrigatório)
+\cleardoublepage
+
+% ==============================================================
+%%
+%%  ELEMENTOS TEXTUAIS 
+%%
+%% =============================================================================
+%
+% Hierarquia (ABNT):
+%
+% \chapter{???}                         --- seção primária   | 1.
+%    \section{???}                      --- seção secundária | 1.1
+%       \subsection{???}                --- seção terciária  | 1.1.1
+%          \subsubsection{???}          --- seção quaternária| 1.1.1.1  
+%              \subsubsubsection{???}   --- seção quinária   | 1.1.1.1.1
+%
+% ==============================================================================
+
+\textual             % Inicia os elementos Textuais (não retirar)
+
+\pagestyle{simple}   % Retira a linha e titulo no verso das páginas (headings é o padrão da classe memoir) (não retirar)
+
+% =============================================================================
+%
+%  Capítulos da parte textual
+%
+%            Inclua os arquivos .tex correspondentes (armazenados no diretório docs), a medida que a Proposta for redigida.
+%            As figuras, caso armazenadas no diretório figs, devem ter seus caminhos indicados de forma apropriada.
+%
+% ==============================================================================
+
+\include{./docs/capit01}   %% 1o capítulo, começo do texto e da numeração das páginas
+\include{./docs/capit02}   %% 2o capítulo 
+\include{./docs/capit03}   %% 3o capítulo 
+\include{./docs/capit04}   %% 4o capítulo 
+\include{./docs/capit05}   %% 5o capítulo
+
+%%
+%%    ELEMENTOS PÓS-TEXTUAIS
+%%
+%\postextual    % Inicia os elementos pós-textuais. Se habilitada, coloca um espaço no Sumário entre os elementos textuais e pós-textuais
+%
+% REFERENCIAS (obrigatório)
+% 
+\bibliography{./docs/bibtex.bib}  % as entradas podem estar em arquivos externos .bib distintos (separados por vírgula)  
+\hypertarget{references}{}
+
+%
+% Glossário (opcional)
+%
+%\include{./docs/glossario}   
+
+%
+% APÊNDICES (opcional)
+%
+%   inclua os apêndices através de arquivos .tex (dentro do diretório docs) nos \include abaixo
+%
+
+\begin{apendicesenv}   % início dos apêndices
+
+\partapendices  % imprime uma folha contendo a expressão Apêndices centralizado na folha (exigido pela UFPel)
+
+\include{./docs/apendice1} 
+\include{./docs/apendice2}
+\include{./docs/apendice3}
+
+\end{apendicesenv}  % fim dos apêndices
+
+%
+%  Anexos (optativo)
+% 
+              
+\begin{anexosenv} % início dos anexos
+
+\partanexos   % imprime uma folha contendo a expressão Anexos centralizado na folha (exigido pela UFPel)
+  
+\include{./docs/anexo1}
+%\include{./docs/anexo2}
+
+\end{anexosenv} % fim dos anexos
+
+% INDICE
+% ==============================================================================
+% Para utilizar o indexamento automatico use no corpo do texto:
+%   \index{palavra} 
+%
+%\printindex          % Índice
+% ==============================================================================
+
+\end{document}

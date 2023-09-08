@@ -1,0 +1,48 @@
+  	  GERANDO A SAÍDA LATEX -> PDF 
+	-----------------------------------
+	#########  ATENÇÃO ################
+
+   Os arquivos no diretório docs estão escritos utilizando a codificação UTF8, uma vez que a suíte abntex2 utiliza esta codificação. 
+
+  Caso seja incluído um novo arquivo, fique atento para que ao salvar seja escolhida a UTF8.
+
+	###############################################
+ 
+	--- Será necessário editar o arquivo tccProposta.tex (Proposta de TCC) ou tccRedacao.tex (versão para defesa)
+
+	--- Neste arquivo será realizada as configurações e definições de nomes e títulos da Proposta.
+
+	--- O texto (capítulos e lista bibliográfica) estão dentro do diretório docs (sugestão)
+
+        --- As figuras estão no diretório figs (sugestão)
+
+Gera o documento de saída via PDFLaTeX
+
+Para ser usado em ambiente UNIX/LINUX/CYGWIN
+
+1) Usando o comando 'make'
+	Uso:
+   		 make <opção>
+
+OBS: O Nome padrão do arquivo é tccProposta ou tccRedacao, para a produção da proposta e tcc, respectivamente.
+     Se você deseja modificar este nome, é necessário abrir o arquivo Makefile e configurá-lo, 
+           alterarando-se a variável BASENAME para seu documento principal.
+
+Opções:
+
+    help	Esta ajuda.
+
+    pdf		Criação do documento PDF (pdflatex e bibtex).
+
+    pdf1	Executa apenas uma vez o PDFLATEX (não executa o bibtex). 
+	
+    clean	Remove arquivos utilizados durante a criação 
+		do documento PDF.
+
+    all		Limpa e cria o documento PDF (remove arquivos antigos e faz pdflatex e bibtex).
+    
+    ps	  	gera documento PS (PostScript)
+    
+    dvi		gera documento DVI
+      
+--------------------------------------------------

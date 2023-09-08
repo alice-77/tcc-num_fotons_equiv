@@ -1,0 +1,171 @@
+\documentclass[
+  tccProposta,   
+% tipo de trabalho: tccProposta, tccRedacao, relatorioEstagio
+  12pt,          
+% tamanho da fonte (12pt, como recomendado pela ABNT NBR 14724)
+  oneside,       
+% impressão: oneside (apenas no anverso); twoside (anverso e verso)
+  a4paper,       
+% tamanho da folha 
+  chapter=TITLE, 
+% título do capítulo em CAIXA ALTA
+  english,       
+% hifenizar palavras em inglês (no abstract, por exemplo)
+  brazil         
+% hifenizar palavras em português-brasileiro (padrão no abntex2). Deve ser
+  % incluída em caso de mais de um idioma.
+]{fisufpel-abntex2}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{axodraw2}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+\usetikzlibrary{3d}
+\DeclareMathOperator*{\sen}{sen}
+\renewcommand{\vec}{\mathbf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Macros abntex2 para configuração do documento (autor, titulo, orientação ....)
+%%
+%
+% Autor. A impressão é feita pela macro \imprimirautor da abntex2
+%
+\autor{Alfredo Achterberg Sanchotene Pacheco}    % Nome completo do autor
+%
+% Titulo do trabalho (língua vernácula). A impressão é feita pela macro
+% \imprimirtitulo da abntex2
+%
+\titulo{O Método dos Fótons Equivalentes}    % título da Proposta de TCC
+\subtitulo{Revisão e Aplicações}         
+% subtítulo. Digitar tudo em minúsculo. Deixar em branco se não houver subtítulo
+% 
+% Localidade: cidade da defesa. Colocar sigla do estado para cidades com mesmo
+% nome. A impressão é feita pela macro \imprimirlocal da abntex2
+% 
+\local{Pelotas}
+%
+% Data: ano de depósito. A impressão é feita pela macro \imprimirdata da abntex2
+%
+\data{\the\year}  
+% ano de defesa, usado na capa. Pode ser passado um ano especifico: \data{2018}
+%
+% Instituição. A impressão é feita pela macro \imprimirinstituicao da abntex2 
+%
+\instituicao{Universidade Federal de Pelotas}
+%
+% Unidade. A impressão é feita pela nova macro \imprimirunidade  
+%
+\unidade{Instituto de Física e Matemática}
+%
+% Curso
+%
+\curso{Curso de Bacharelado em Física}   
+%
+% Orientador. A impressão é feita pela macro \imprimirorientador. O rótulo
+% [...] pode ser impresso pela macro \imprimirorientadorRotulo
+%
+\orientador[Orientador]{Prof. Dr. Werner Krambeck Sauter}     
+% em caso de orientadora, mudar rótulo para [Orientadora]
+\titulacaoorientador{Doutor em Ciência}    
+% em caso de orientadora, mudar para Doutora em ????
+%
+% Coorientador. A impressão é feita pela macro \imprimircoorientador. O rótulo
+% [...] pode ser impresso pela macro \imprimircorientadorRotulo 
+%
+\coorientador[]{}  %  se não tiver coorientador, deixar os dois campos em branco                      
+%
+% Tipo do Trabalho. A impressão é feita pela macro \imprimirtipotrabalho da abntex2
+%
+\tipotrabalho{Proposta de Trabalho de Conclusão de Curso}
+%
+% data de aprovação
+%
+\datadefesa{25 de setembro de 2023} 
+% colocar a data da defesa no formato dia do mês de ano (por exemplo: 12 de junho de 2019)
+%
+% Membros da Banca (outros, além do Orientador. Utilize o formato
+% \membroA{Titulo}{Nome}{instituição})
+%            para o Título, use a titulação dos membros da banca como declarado nos CVs 
+%                        
+\membroA{Doutor em Física}{Maurício Jeomar Piotrowski}{Universidade Federal de Pelotas}  
+\membroB{Doutor em Ciências}{Mario Luiz Lopes da Silva}{Universidade Federal de Pelotas}
+\membroC{Doutor em Física}{Wagner Tenfen}{Universidade Federal de Pelotas}  
+%
+\ifpdf
+\pdfcompresslevel 9  %% nível de compressão (0 -- 9)
+\fi
+%
+\makeindex    %  compila o indice
+%%
+%%    INICIO DO DOCUMENTO
+%%
+\begin{document}
+\OnehalfSpacing    
+% Espaçamento entre linhas igual a um espaço e meio (1.5) -- não retirar
+\pretextual 
+%%
+%% ELEMENTOS PRÉ-TEXTUAIS (são incluídos na contagem de páginas totais)
+%%
+%%    Comente os elementos opcionais abaixo caso não as deseje.
+%%
+\imprimirfolhaderosto      % macro da abntex2 para Folha de Rosto (obrigatória).
+
+\imprimirfolhadeaprovacao  % Folha de Aprovação (obrigatória)
+%\includepdf{folhadeaprovacao.pdf}   % Folha de Aprovação digitalizada (para
+%versão aprovada da Proposta) 
+%%
+%%  ELEMENTOS TEXTUAIS 
+%%
+%% =============================================================================
+%
+% Hierarquia (ABNT):
+%
+% \chapter{???}                         --- seção primária   | 1.
+%    \section{???}                      --- seção secundária | 1.1
+%       \subsection{???}                --- seção terciária  | 1.1.1
+%          \subsubsection{???}          --- seção quaternária| 1.1.1.1  
+%              \subsubsubsection{???}   --- seção quinária   | 1.1.1.1.1
+%
+% ==============================================================================
+
+\textual             
+% Inicia os elementos Textuais -- não retirar
+\pagestyle{simple}   
+% Retira a linha e titulo no verso das paginas (headings é o padrão da classe
+% memoir) -- não retirar
+%
+% =============================================================================
+%
+%  Capítulos da parte textual
+%
+%            Inclua os arquivos .tex correspondentes (armazenados no diretório
+%            docs), a medida que a Proposta for redigida.
+%            As figuras, caso armazenadas no diretório figs, devem ter seus
+%            caminhos indicados de forma apropriada.
+%
+% ==============================================================================
+%
+\include{./docs/introducao}
+\include{./docs/objetivos}
+\include{./docs/referencial_teorico}
+\include{./docs/metodologia}
+\include{./docs/cronograma}
+%% 1o capítulo, começo do texto e da numeração das páginas
+%%
+%%    ELEMENTOS PÓS-TEXTUAIS
+%%
+%% =============================================================================
+%
+% REFERENCIAS (obrigatório)
+% 
+\bibliography{./docs/bibtex.bib}  
+% as entradas podem estar em arquivos externos .bib distintos (separados por
+% vírgula)  
+\hypertarget{references}{}
+%
+\end{document}

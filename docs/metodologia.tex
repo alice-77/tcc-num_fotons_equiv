@@ -1,0 +1,27 @@
+\chapter{Metodologia}
+Na execução desse projeto de pesquisa pretendemos realizar um leitura mais
+aprofundada do método de fótons equivalentes, realizando os cálculos analíticos
+e revisando os métodos teóricos de análise dos problemas. Nesse sentido, uma
+revisão do método incluirá um cálculo do fluxo de fótons equivalentes para
+distribuições pontuais e extensas de carga. Também, uma revisão teórica das
+interações eletromagnéticas em colisões relativísticas de íons será feita, com
+o intuito de obter um entendimento maior dos fluxos de fótons gerados pelos
+íons a velocidades relativísticas.
+
+Para os cálculos que não puderem ser realizados analiticamente, usaremos de
+métodos computacionais para obtenção das curvas teóricas. Com isso, faremos uso
+da biblioteca GSL (\textit{GNU Scientific Library}) para C e C++, que possui as
+funções especiais de interesse, em conjunto com rotinas de integração que serão
+úteis no cálculo de integrais como na equação (\ref{eq_EP-SPEC-F})
+\cite{gsl_manual}.
+
+Após a obtenção destes, vamos calcular as seções de choque de processos de
+fotoprodução para diferentes íons.  Inicialmente processos de colisão $e^-
+e^+$, $e^- e^-$, que possuem distribuição de carga pontual. Deduzir a seção de
+choque de fotoprodução de pares nessas colisões analiticamente ou obtê-las
+numericamente se for o caso. Disso, iremos calcular as seções de choque para
+alguns íons da Tabela \ref{tab_ion-par}, nos atentando para os parâmetros
+experimentais de energia e luminosidade, e compararemos tais curvas teóricas
+com os dados experimentais das respectivas colisões.
+
+
