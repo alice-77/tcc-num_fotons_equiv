@@ -8,9 +8,12 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{tikz}
 %\usepackage{axodraw2}
 \usepackage{subcaption}
+
+% Tikz com snakes
+\usepackage{tikz}
+\usetikzlibrary{snakes}
 
 % Uso de uma fonte especial que eu acho bonite
 \usepackage[math]{iwona}
@@ -120,34 +123,9 @@
 	\column{0.4\textwidth}
 
 	\begin{figure}
-	\begin{tikzpicture}[thick]
-		\draw(-2,2) ellipse (0.15 and 0.75);
-		\draw(0,0) ellipse (0.15 and 0.75);
-		\node[left] (z1) at (-2.15,2) {$Z_1e$};
-		\node[right] (z2) at (0.15,0) {$Z_2 e$};
-
-		\draw[->](-2,2.75) -- (-2,3.75);
-		\draw[->, rotate around={15:(-2,2.75)}](-2,2.75) -- (-2,3.75);
-		\draw[->, rotate around={-15:(-2,2.75)}](-2,2.75) -- (-2,3.75)
-			node[right]{$\vec{E}$};
-
-		\draw[->](-2,1.25) -- (-2,0.25);
-		\draw[->, rotate around={15:(-2,1.25)}](-2,1.25) -- (-2,0.25);
-		\draw[->, rotate around={-15:(-2,1.25)}](-2,1.25) -- (-2,0.25);
-
-		\draw[->](0,0.75) -- (0,1.75);
-		\draw[->, rotate around={15:(0,0.75)}](0,0.75) -- (0,1.75);
-		\draw[thick, ->, rotate around={-15:(0,0.75)}](0,0.75) -- (0,1.75);
-
-		\draw[->](0,-0.75) -- (0,-1.75);
-		\draw[->, rotate around={15:(0,-0.75)}](0,-0.75) -- (0,-1.75);
-		\draw[->, rotate around={-15:(0,-0.75)}](0,-0.75) -- (0,-1.75);
-
-		\draw[->](-1.85,2) -- (-1,2);
-		\draw[->](-0.15,0) -- (-1.15,0) node[below]{$v \approx c$};
-	\end{tikzpicture}
-	\caption{Esquema representando os campos relativísticos de dois íons $Z_1$
-		e $Z_2$.}
+		\input{./figs/relativistic_ions-tikzgraph.tex}
+		\caption{Esquema representando os campos relativísticos de dois íons
+		$Z_1$ e $Z_2$.}
 	\end{figure}
 
 
@@ -279,26 +257,14 @@
 
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
-	Inicialmente consideramos uma carga em movimento como abaixo.\footnote{A partir daqui usaremos unidades naturais ($\hslash = c = 1$).}
+	Inicialmente consideramos uma carga em movimento como abaixo.\footnote{A
+	partir daqui usaremos unidades naturais ($\hslash = c = 1$).}
 	\begin{figure}
-		\begin{tikzpicture}[thick, scale=0.65]
-		% A caceta dos eixos...
-			\draw[-] (0,0) --  (13,0)node[below right]{$x_1$};
-			\draw[-] (0,0) -- (0,4) node[above]{$x_2$};
-			\draw[-] (0,0) -- (0,0,3) node[below left]{$x_3$};
-			\draw[-] (5,0.4) -- (13.5,0.4) node[right]{$x'_1$};
-			\draw[-] (5,0.4) -- (5,4) node[above]{$x' _2$};
-			\draw[-] (5,0.4) -- (5,0.2,3) node[below left]{$x'_3$};
-
-		% A caceta dos desenhos que importam
-			\filldraw (5,0.4) circle(3pt) node[above right] {$q$};
-			\filldraw (0,3) circle(3pt) node[above right] {$P$};
-			\draw (0,3) -- node[above]{$r$} (5,0.4);
-			\draw[|-|,dashed] (-0.3,0) -- node[fill=white,left]{$b$} (-0.3,3);
-			\draw[->,ultra thick] (5,0.4) -- (7,0.4) node[above]{$\vec{v}$};
-	\end{tikzpicture}
+	\input{./figs/moving_charge-tikzgraph.tex}
 	\caption{Carga $q$ em movimento com velocidade $\vec{v}$ passando por um
-		ponto de observação $P$ com parâmetro de impacto $b$ e distância $r$.}
+		ponto de observação $P$ com parâmetro de impacto $b$ e distância $r$.
+		Referencial $\Sigma$ é solidário ao ponto $P$ e $\Sigma '$ é solidário
+		à carga pontual $q$.}
 	\end{figure}
 \end{frame}
 
@@ -360,6 +326,67 @@
 	\end{equation}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Demonstração do Método para Carga Pontual}
+	\begin{columns}
+
+	\column{0.5\textwidth}
+		Os campos como percebidos em $P$, no referencial $\Sigma '$ tem a forma
+		\begin{equation}
+			E_1 ' = -\frac{qvt'}{{r'} ^3}, \qquad E_2 ' = \frac{qb}{{r'}^3}.
+		\end{equation}
+		Escrevemos nas \textit{coordenadas} de $\Sigma$ usando,
+		\begin{gather}
+			t' = \gamma t, \\
+			\begin{split}
+			r ' &= \sqrt{b^2 + (v t')^2} \\
+				&= \sqrt{b^2 + v^2 \gamma ^2 t^2}.
+			\end{split}
+		\end{gather}
+
+	\column{0.5\textwidth}
+		Assim
+		\begin{gather}
+			E _1 '= - \frac{q\gamma vt}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}},\\
+			E _2 '= \frac{qb}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}},
+		\end{gather}
+		para os quais devemos aplicar a transformação de Lorentz.
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Demonstração do Método para Carga Pontual}
+	Aplicando a transformada de Lorentz, temos os campos no \textit{referencial}
+	$\Sigma '$,
+	\begin{gather}
+		E_1 (t) = -\frac{q\gamma vt}{(b^2 + \gamma ^2 v^2t^2)^{3/2}}
+			\label{eq_field1},\\
+		E_2 (t) = \frac{q\gamma b}{(b^2 + \gamma ^2 v^2 t
+			^2)^{3/2}}\label{eq_field2},\\ 
+		B_3 (t) = \beta E_2(t) \label{eq_field3}.
+	\end{gather}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Demonstração do Método para Carga Pontual}
+	\begin{figure}
+		\begin{subfigure}[b]{0.4\textwidth}
+			\centering
+			\input{./figs/wave_pulses1-tikzgraph.tex}
+			\caption{Campos observados no ponto de observação $P$.}
+		\end{subfigure}
+		\hspace{1cm}
+		\begin{subfigure}[b]{0.4\textwidth}
+			\centering
+			\input{./figs/wave_pulses2-tikzgraph.tex}
+			\caption{Pulsos aproximados $P_1$ e $P_2$ atingindo $P$.}
+		\end{subfigure}
+		\caption{Aproximação chave do método dos fótons virtuais é a de
+		substituir os campos elétrico e magnético por pulsos de radiação
+		equivalentes.}
+	\end{figure}
+
+\end{frame}
 
 \section{Sobre o Fator de Forma}
 

@@ -1,0 +1,25 @@
+\begin{tikzpicture}[thick]
+	\draw[-](-1,0) -- (1,0) node[right]{$x_1$};
+	\draw[-](0,0) -- (0,2.5) node[above]{$x_2$};
+
+	\filldraw (0,1.5) circle(3pt) node[above right]{$P$};
+
+	\draw[
+		->,
+		snake = coil,
+		segment aspect=0,
+		segment length=5pt,
+		segment amplitude=5pt,
+		line after snake=2pt,
+		blue
+	] (0,0) -- (0,1) node[left]{$P_2$};
+	\draw[
+		->,
+		snake = coil,
+		segment aspect=0,
+		segment length=5pt,
+		segment amplitude=5pt,
+		line after snake=2pt,
+		blue
+	] (-1.5,1.5) -- (-0.5,1.5) node[above]{$P_1$};
+\end{tikzpicture}

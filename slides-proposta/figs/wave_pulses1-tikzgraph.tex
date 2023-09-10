@@ -1,0 +1,11 @@
+\begin{tikzpicture}[thick]
+	\draw[-] (0,0) --  (3,0)node[right]{$x_1$};
+	\draw[-] (0,0) -- (0,2.5) node[above]{$x_2$};
+	\draw[-] (0,0) -- (0,0,1) node[below left]{$x_3$};
+
+	\draw[->, blue] (2,1.5) -- (2,3.5) node[left]{$E_2$};
+	\draw[->, blue] (2,1.5) -- (3.5,1.5) node[right]{$E_1$};
+	\draw[->, blue] (2,1.5) -- (2,1.5,2) node[below]{$B_3$};
+
+	\filldraw (2,1.5) circle(3pt) node[above left] {$P$};
+\end{tikzpicture}
