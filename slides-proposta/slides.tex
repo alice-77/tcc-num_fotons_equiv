@@ -17,6 +17,7 @@
 
 % Uso de uma fonte especial que eu acho bonite
 \usepackage[math]{iwona}
+%\usepackage{fourier}
 
 \usetikzlibrary{3d}
 \DeclareMathOperator*{\sen}{sen}
@@ -32,7 +33,7 @@
 \setbeamertemplate{itemize item}[triangle]
 \setbeamertemplate{enumerate item}[square]
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{section in toc}[circle]
 
 \title{Método dos Fótons Equivalentes}
 \subtitle{Revisão e Aplicações}
@@ -125,7 +126,7 @@
 	\begin{figure}
 		\input{./figs/relativistic_ions-tikzgraph.tex}
 		\caption{Esquema representando os campos relativísticos de dois íons
-		$Z_1$ e $Z_2$.}
+		$Z_1$ e $Z_2$}
 	\end{figure}
 
 
@@ -278,12 +279,12 @@
 	estes são escritos em forma explicitamente covariante usando o tensor
 	eletromagnético,
 	\begin{equation}
-		(F^{\mu \nu}) = \begin{pmatrix}
+		F^{\mu \nu} = \begin{bmatrix}
 			0 & -E_1 & -E_2 & -E_3 \\
 			E_1 & 0 & -B_3 & B_2 \\
 			E_2 & B_3 & 0 & -B_1 \\
 			E_3 & -B_2 & B_1 & 0
-		\end{pmatrix}.
+		\end{bmatrix}.
 	\end{equation}
 \end{frame}
 
@@ -297,12 +298,12 @@
 	onde $\Lambda _\mu ^\nu$ são os componentes da matriz de transformação
 	de Lorentz,
 	\begin{equation}
-		(\Lambda ^\mu _\nu) = \begin{pmatrix}
+		\Lambda ^\mu _\nu = \begin{bmatrix}
 			\gamma & -\gamma \beta & 0 & 0 \\
 			-\gamma \beta & \gamma & 0 & 0 \\
 			0 & 0 & 1 & 0 \\
 			0 & 0 & 0 & 1
-		\end{pmatrix},
+		\end{bmatrix},
 	\end{equation}
 	sendo $\gamma = (1-\beta ^2)^{-1/2}$ e $\beta = v/c$ os parâmetros
 	relativísticos da partícula.
@@ -365,6 +366,12 @@
 			^2)^{3/2}}\label{eq_field2},\\ 
 		B_3 (t) = \beta E_2(t) \label{eq_field3}.
 	\end{gather}
+	\begin{block}{Aproximamos estes campos como pulsos de onda.}
+		Analisando esses campos podemos notar que $E_2$ e $B_3$ formam um pulso
+		de onda na direção $x_1$. Ainda assim, a interação do campo $E_1$ pode
+		ser analisada como um pulso de onda pela inserção de um campo magnético
+		artificial como aproximação.
+	\end{block}
 \end{frame}
 
 \begin{frame}
@@ -373,7 +380,7 @@
 		\begin{subfigure}[b]{0.4\textwidth}
 			\centering
 			\input{./figs/wave_pulses1-tikzgraph.tex}
-			\caption{Campos observados no ponto de observação $P$.}
+			\caption{Campos observados no referencial do ponto $P$.}
 		\end{subfigure}
 		\hspace{1cm}
 		\begin{subfigure}[b]{0.4\textwidth}
@@ -385,7 +392,25 @@
 		substituir os campos elétrico e magnético por pulsos de radiação
 		equivalentes.}
 	\end{figure}
+\end{frame}
 
+\begin{frame}
+	\frametitle{Demonstração do Método para Carga Pontual}
+	Com isso, iremos calcular agora os espectros de frequência\footnote{A
+	energia por unidade de frequência e área de um pulso}, para ambos os
+	pulsos. Estes o são
+	\begin{gather}
+		I_1(\omega , b) = \frac{1}{2\pi} |E_2 (\omega) |^2 ,\\
+		I_2 (\omega , b) = \frac{1}{2\pi} |E_1 (\omega)|^2.
+	\end{gather}
+	em que 
+	\begin{equation}
+		E_{1,2} (\omega) = \frac{1}{\sqrt{2\pi}} \int _{-\infty}^{+\infty}
+		dt \; E _{1,2} (t) e^{i\omega t}
+	\end{equation}
+	é a transformada de Fourier da parte elétrica dos pulsos.
+
+	
 \end{frame}
 
 \section{Sobre o Fator de Forma}
