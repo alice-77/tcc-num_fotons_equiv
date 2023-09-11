@@ -16,14 +16,14 @@
 \usetikzlibrary{snakes}
 
 % Uso de uma fonte especial que eu acho bonite
-\usepackage[math]{iwona}
-%\usepackage{fourier}
+%\usepackage[math]{iwona}
+\usepackage{fourier}
 
 \usetikzlibrary{3d}
 \DeclareMathOperator*{\sen}{sen}
 \renewcommand{\vec}{\mathbf}
 
-\usetheme{Madrid}
+\usetheme{Boadilla}
 
 \definecolor{azulUFPel}{rgb}{0.0, 0.25, 0.55}
 \usecolortheme[named=azulUFPel]{structure}
@@ -279,12 +279,12 @@
 	estes são escritos em forma explicitamente covariante usando o tensor
 	eletromagnético,
 	\begin{equation}
-		F^{\mu \nu} = \begin{bmatrix}
+		F^{\mu \nu} = \begin{pmatrix}
 			0 & -E_1 & -E_2 & -E_3 \\
 			E_1 & 0 & -B_3 & B_2 \\
 			E_2 & B_3 & 0 & -B_1 \\
 			E_3 & -B_2 & B_1 & 0
-		\end{bmatrix}.
+		\end{pmatrix}.
 	\end{equation}
 \end{frame}
 
@@ -298,12 +298,12 @@
 	onde $\Lambda _\mu ^\nu$ são os componentes da matriz de transformação
 	de Lorentz,
 	\begin{equation}
-		\Lambda ^\mu _\nu = \begin{bmatrix}
+		\Lambda ^\mu _\nu = \begin{pmatrix}
 			\gamma & -\gamma \beta & 0 & 0 \\
 			-\gamma \beta & \gamma & 0 & 0 \\
 			0 & 0 & 1 & 0 \\
 			0 & 0 & 0 & 1
-		\end{bmatrix},
+		\end{pmatrix},
 	\end{equation}
 	sendo $\gamma = (1-\beta ^2)^{-1/2}$ e $\beta = v/c$ os parâmetros
 	relativísticos da partícula.
@@ -420,8 +420,8 @@
 		I_2 (\omega , b) = \frac{1}{\pi ^2} \frac{q^2}{\beta ^2 b^2 }
 		\frac{1}{\gamma ^2} \xi^2 K_0 ^2 \left( \xi \right).
 	\end{gather}
-	onde $\xi \equiv \omega b / \gamma v$ e $K_1$ e $K_0$ são as funções
-	modificadas de Bessel.
+	onde $\displaystyle \xi \equiv \frac {\omega b}{\gamma v}$ e as
+	funções$K_1$ e $K_0$ são as funções modificadas de Bessel.
 \end{frame}
 
 \begin{frame}
