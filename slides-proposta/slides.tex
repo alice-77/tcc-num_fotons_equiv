@@ -18,8 +18,8 @@
 \usetikzlibrary{snakes}
 
 % Uso de uma fonte especial que eu acho bonite
-%\usepackage[math]{iwona}
-\usepackage{fourier}
+\usepackage[condensed,math]{iwona}
+%\usepackage{fourier}
 
 \usetikzlibrary{3d}
 \DeclareMathOperator*{\sen}{sen}
@@ -100,36 +100,31 @@
 
 \begin{frame}
 	\frametitle{Introdução e Contextualização}
-
 	\begin{columns}
 	\column{0.6\textwidth}
-
-	Disso, E. J. Williams, em 1933, propôs a generalização relativística do que
-	seria o método dos fótons equivalentes.
-	\begin{itemize}
-		\item O método consiste, de forma introdutória, em obter o número de 
-			fótons virtuais do campo eletromagnético de uma partícula a
-			partir da transformada de Fourier dos mesmos campos;
-		\item este consiste de uma aproximação \textit{semi-clássica} para
-			o cálculo desses fótons virtuais.
-	\end{itemize}
+		Disso, E. J. Williams, em 1933, propôs a generalização relativística do que
+		seria o método dos fótons equivalentes.
+		\begin{itemize}
+			\item O método consiste, de forma introdutória, em obter o número de 
+				fótons virtuais do campo eletromagnético de uma partícula a
+				partir da transformada de Fourier dos mesmos campos;
+			\item este consiste de uma aproximação \textit{semi-clássica} para
+				o cálculo desses fótons virtuais.
+		\end{itemize}
 
 	\column{0.4\textwidth}
-
-	\begin{figure}
-		\input{./figs/relativistic_ions-tikzgraph.tex}
-		\caption{Esquema representando os campos relativísticos de dois íons
-		$Z_1$ e $Z_2$}
-	\end{figure}
+		\begin{figure}
+			\input{./figs/relativistic_ions-tikzgraph.tex}
+			\caption{Esquema representando os campos relativísticos de dois íons
+			$Z_1$ e $Z_2$}
+		\end{figure}
 	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Introdução e Contextualização}
-
 	Desde tais desenvolvimentos, este método aproximativo teve maior aplicação e
 	desenvolvimentos na área de interação nuclear e de partículas fundamentais.
-
 	\begin{itemize}
 		\item Em especial, focaremos nas colisões ultraperiféricas de íons;
 		\item são colisões com maior distância (parâmetro de impacto) e com
@@ -184,29 +179,26 @@
 
 \begin{frame}
 	\frametitle{Seção de Choque Diferencial e Total}
-
 	\begin{columns}
 	\column{0.5\textwidth}
-	Da figura temos as diferenciais,
-	\begin{gather}
-		d\sigma = |b\, db\, d\phi|,\\
-		d\Omega = |\sen \theta \, d\theta \, d\phi|.
-	\end{gather}
-	A razão entre as duas é,
-	\begin{equation}
-		\frac{d\sigma}{d\Omega} = \bigg| \frac{b}{\sen \theta}
-		\frac{db}{d\theta} \bigg|. \label{diff_cross_section}
-	\end{equation}
-	Que é a seção de choque diferencial.
+		Da figura temos as diferenciais,
+		\begin{gather}
+			d\sigma = |b\, db\, d\phi|,\\
+			d\Omega = |\sen \theta \, d\theta \, d\phi|.
+		\end{gather}
+		A razão entre as duas é,
+		\begin{equation}
+			\frac{d\sigma}{d\Omega} = \bigg| \frac{b}{\sen \theta}
+			\frac{db}{d\theta} \bigg|. \label{diff_cross_section}
+		\end{equation}
+		Que é a seção de choque diferencial.
 
 	\column{0.5\textwidth}
-	A seção de choque total vem pela integral sobre $\Omega$,
-	\begin{equation}
-		\sigma = \int \frac{d\sigma}{d\Omega} \sen \theta \, d\theta \, d\phi .
-	\end{equation}
-
+		A seção de choque total vem pela integral sobre $\Omega$,
+		\begin{equation}
+			\sigma = \int \frac{d\sigma}{d\Omega} \sen \theta \, d\theta \, d\phi .
+		\end{equation}
 	\end{columns}
-
 \end{frame}
 
 \begin{frame}
@@ -249,7 +241,6 @@
 	\end{figure}
 \end{frame}
 
-
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
 	Para o caso com velocidade da partícula em $x_1$, a transformação de
@@ -270,7 +261,6 @@
 	sendo $\gamma = (1-\beta ^2)^{-1/2}$ e $\beta = v/c$ os parâmetros
 	relativísticos da partícula.
 \end{frame}
-
 
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
@@ -355,6 +345,14 @@
 			K_0 ^2 (\xi ) \right]. \label{eq_EP-SPEC}
 		\end{split}
 	\end{equation}
+	\begin{block}{Este pode ser simplificado:}
+		Por conta do fator $\gamma ^{-2}$, para velocidades relativísticas altas o
+		termo com $K_0$ contribui pouco para o fluxo de fótons e podemos escrever,
+		\begin{equation}
+			N(\omega , b) = \frac{1}{\pi ^2} \frac{q^2} {\beta ^2 b^2}
+			\frac{1}{\omega ^2} \xi ^2 K_1 ^2 (\xi).
+		\end{equation}
+	\end{block}
 \end{frame}
 
 \begin{frame}
