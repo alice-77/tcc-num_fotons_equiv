@@ -10,6 +10,8 @@
 \usepackage{graphicx}
 %\usepackage{axodraw2}
 \usepackage{subcaption}
+\usepackage{appendixnumberbeamer}
+\usepackage{multirow}
 
 % Tikz com snakes
 \usepackage{tikz}
@@ -23,7 +25,7 @@
 \DeclareMathOperator*{\sen}{sen}
 \renewcommand{\vec}{\mathbf}
 
-\usetheme{Boadilla}
+\usetheme{Madrid}
 
 \definecolor{azulUFPel}{rgb}{0.0, 0.25, 0.55}
 \usecolortheme[named=azulUFPel]{structure}
@@ -39,24 +41,15 @@
 \subtitle{Revisão e Aplicações}
 \author[A. A. S. Pacheco]{
 	Alfredo Achterberg S. Pacheco\\
-	{\footnotesize Orientado por: Prof.  Dr. Werner Krambeck Sauter}
+	{\footnotesize Orientado por: Prof.  Dr. Werner Krambeck Sauter}\\
+	{\scriptsize Defesa da Proposta de Trabalho de Conclusão de Curso}
 }
-\institute[IFM - UFPel]{
-	Instituto de Física e Matemática - Universidade Federal de Pelotas
+\institute[UFPel]{
+	Curso de Bacharelado em Física - Universidade Federal de Pelotas
 }
 \date[25 de set., 2023]{25 de Setembro, 2023}
 \titlegraphic{
-	\includegraphics[height=1.5cm]{
-		./logos/logoUFPEL.png
-	}
-	\hspace{1cm}
-	\includegraphics[height=1cm]{
-		./logos/logoFNDE.png
-	}
-	\hspace{1cm}
-	\includegraphics[height=1cm]{
-		./logos/ifm_logo.png
-	}
+	\includegraphics[height=1.5cm]{./logos/logoUFPEL.png}
 }
 %\logo{\includegraphics[width=0.15\textwidth]{logoUFPel.png}}
 
@@ -128,8 +121,6 @@
 		\caption{Esquema representando os campos relativísticos de dois íons
 		$Z_1$ e $Z_2$}
 	\end{figure}
-
-
 	\end{columns}
 \end{frame}
 
@@ -152,6 +143,7 @@
 \end{frame}
 
 \section{Objetivos do Trabalho}
+
 \begin{frame}
 	\frametitle{Objetivos do Trabalho}
 
@@ -242,19 +234,7 @@
 	\end{gather}
 \end{frame}
 
-\section{Demonstração do Método para Partícula Incidente Pontual}
-\begin{frame}
-	\frametitle{Demonstração do Método para Carga Pontual}
-	A dedução do método segue os seguintes passos:
-	\begin{itemize}
-		\item obter os campos de uma carga pontual em movimento pela
-			transformada de Lorentz;
-		\item calcular a transformada de Fourier para a frequência dos campos,
-			obtendo assim o espectro de frequência;
-		\item a quantização do espectro de frequência nos fornece o número de
-			fótons equivalentes dos campos da partícula.
-	\end{itemize}
-\end{frame}
+\section{Demonstração do Método}
 
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
@@ -269,49 +249,11 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Demonstração do Método para Carga Pontual}
-	Sendo os campos elétrico e magnético escritos em termos dos potenciais,
-	\begin{gather}
-		\vec{E} = - \nabla \Phi - \frac{\partial \vec{A}}{\partial t}, \\
-		\vec{B} = \nabla \times \vec{A},
-	\end{gather}
-	estes são escritos em forma explicitamente covariante usando o tensor
-	eletromagnético,
-	\begin{equation}
-		F^{\mu \nu} = \begin{pmatrix}
-			0 & -E_1 & -E_2 & -E_3 \\
-			E_1 & 0 & -B_3 & B_2 \\
-			E_2 & B_3 & 0 & -B_1 \\
-			E_3 & -B_2 & B_1 & 0
-		\end{pmatrix}.
-	\end{equation}
-\end{frame}
 
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
-	Este se transforma como, 
-	\begin{equation}
-		{F'}^{\mu \nu} = \Lambda _\alpha ^\mu \Lambda _\beta ^\nu F^{\alpha
-		\beta}
-	\end{equation}
-	onde $\Lambda _\mu ^\nu$ são os componentes da matriz de transformação
-	de Lorentz,
-	\begin{equation}
-		\Lambda ^\mu _\nu = \begin{pmatrix}
-			\gamma & -\gamma \beta & 0 & 0 \\
-			-\gamma \beta & \gamma & 0 & 0 \\
-			0 & 0 & 1 & 0 \\
-			0 & 0 & 0 & 1
-		\end{pmatrix},
-	\end{equation}
-	sendo $\gamma = (1-\beta ^2)^{-1/2}$ e $\beta = v/c$ os parâmetros
-	relativísticos da partícula.
-\end{frame}
-
-\begin{frame}
-	\frametitle{Demonstração do Método para Carga Pontual}
-	A transformação dos campos é assim obtida como,
+	Para o caso com velocidade da partícula em $x_1$, a transformação de
+	Lorentz dos campos é,
 	\begin{equation}
 		\label{eq_field_trans}
 		\begin{cases}
@@ -323,42 +265,18 @@
 		B_1 ' = B_1 \\
 		B_2 ' = \gamma (B_2 + \beta E_3) \\
 		B_3' = \gamma(B_3 - \beta E_2)
-		\end{cases}.
+		\end{cases},
 	\end{equation}
+	sendo $\gamma = (1-\beta ^2)^{-1/2}$ e $\beta = v/c$ os parâmetros
+	relativísticos da partícula.
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
-	\begin{columns}
-
-	\column{0.5\textwidth}
-		Os campos como percebidos em $P$, no referencial $\Sigma '$ tem a forma
-		\begin{equation}
-			E_1 ' = -\frac{qvt'}{{r'} ^3}, \qquad E_2 ' = \frac{qb}{{r'}^3}.
-		\end{equation}
-		Escrevemos nas \textit{coordenadas} de $\Sigma$ usando,
-		\begin{gather}
-			t' = \gamma t, \\
-			\begin{split}
-			r ' &= \sqrt{b^2 + (v t')^2} \\
-				&= \sqrt{b^2 + v^2 \gamma ^2 t^2}.
-			\end{split}
-		\end{gather}
-
-	\column{0.5\textwidth}
-		Assim
-		\begin{gather}
-			E _1 '= - \frac{q\gamma vt}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}},\\
-			E _2 '= \frac{qb}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}},
-		\end{gather}
-		para os quais devemos aplicar a transformação de Lorentz.
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Demonstração do Método para Carga Pontual}
-	Aplicando a transformada de Lorentz, temos os campos no \textit{referencial}
-	$\Sigma '$,
+	Escrevendo os campos nas \textit{coordenadas} de $\Sigma$ e depois
+	aplicando a transformada de Lorentz temos os campos no \textit{referencial}
+	$\Sigma$,
 	\begin{gather}
 		E_1 (t) = -\frac{q\gamma vt}{(b^2 + \gamma ^2 v^2t^2)^{3/2}}
 			\label{eq_field1},\\
@@ -401,12 +319,12 @@
 	pulsos. Estes o são
 	\begin{gather}
 		I_1(\omega , b) = \frac{1}{2\pi} |E_2 (\omega) |^2 ,\\
-		I_2 (\omega , b) = \frac{1}{2\pi} |E_1 (\omega)|^2.
+		I_2 (\omega , b) = \frac{1}{2\pi} |E_1 (\omega)|^2,
 	\end{gather}
 	em que 
 	\begin{equation}
 		E_{1,2} (\omega) = \frac{1}{\sqrt{2\pi}} \int _{-\infty}^{+\infty}
-		dt \; E _{1,2} (t) e^{i\omega t}
+		dt \; E _{1,2} (t) e^{i\omega t},
 	\end{equation}
 	é a transformada de Fourier da parte elétrica dos pulsos.
 \end{frame}
@@ -426,10 +344,127 @@
 
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
-	A partir disso, teremos o seguinte para os campos,
+	A partir disso, o número de fótons equivalentes pode ser obtido pelo
+	espectro de frequência como,
+	\begin{equation}
+		\begin{split}
+		N(\omega , b) &= \frac{1}{\omega} \left[ I_1 (\omega , b) + I_2(\omega
+			, b) \right]\\
+			&= \frac{1}{\pi ^2} \frac{q^2} {\beta ^2 b^2}
+			\frac{1}{\omega ^2} \xi ^2 \left[K_1^2 (\xi ) + \frac{1}{\gamma ^2}
+			K_0 ^2 (\xi ) \right]. \label{eq_EP-SPEC}
+		\end{split}
+	\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Demonstração do Método para Carga Pontual}
+	O número de fótons total é dado pela integral de $N(\omega , b)$ sobre os
+	parâmetros de impacto,
+	\begin{equation}
+	\begin{split}
+		n(\omega) &= \int _{b_{\text{min}}}^\infty db\; bN(\omega , b) \\ 
+		&= \frac{1}{\pi} \frac{2q^2}{\beta ^2} \frac{1}{\omega} \left\{ \xi
+		_\text{min} K_0 \left( \xi \right) K_1 \left( \xi _\text{min} \right) -
+		\frac{\beta ^2}{2} \xi _\text{min} ^2 \left[ K_1 ^2 \left( \xi
+		_\text{min} \right) - K_0 ^2 \left( \xi _\text{min} \right) \right]
+		\right\}, \label{eq_EPT}
+	\end{split}
+	\end{equation}
 \end{frame}
 
 \section{Sobre o Fator de Forma}
+\begin{frame}
+	\frametitle{Sobre o Fator de Forma}
+	Para o caso da partícula incidente não ser pontual é introduzido o
+	\textit{fator de forma} $F(|\vec{q}|)$. Assim, o $N(\omega , b)$ fica
+	escrito como,
+	\begin{equation}
+		N(\omega , b) = \frac{1}{\pi ^2} \frac{Z^2 \alpha}{\beta ^2 \omega b^2}
+		\Bigg| \int du \; u^2 J_1 (u) \frac{F[(u^2 + \xi ^2)/b^2]}{u^2 + \xi ^2}
+		\Bigg|^2. \label{eq_EP-SPEC-F}
+	\end{equation}
+	O fator de forma $F(|\vec{q}|)$ é a transformada de Fourier da distribuição
+	de carga $f(\vec{r})$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sobre o Fator de Forma}
+	\begin{itemize}
+		\item A maior parte das distribuições de carga são esfericamente
+			simétricas.
+	\end{itemize}
+	\begin{table}
+		\begin{tabular}{|c|c|}
+			\hline 
+			$f(r)$ & $F(|\vec{q}|)$ \\
+			\hline
+			 $\delta (r) / 4 \pi$ & 1 \\
+			$\displaystyle \frac{a^3}{8\pi} e^{-ar}$ &
+			$\displaystyle \left(\frac{1 + |\vec{q}|^2}{a^2}\right) ^{-2}$\\
+			$ \left( a^2 / 2\pi \right)^{3/2} e
+			^{-a^2 r^2 / 2}$ & $e^{|\vec{q}|^2 / 2a^2 }$ \\
+			 $\displaystyle \begin{cases}
+				3/4\pi R^3, & r \leq R \\
+				0, & r > R
+			\end{cases}$ & $ \displaystyle \frac{3(\sen \alpha - \alpha \cos
+			\alpha)}{\alpha}$, $\alpha = |\vec{q}| R$ 
+			\\
+			\hline
+		\end{tabular}
+		\caption{Fatores de forma disponíveis para diferentes distribuições de
+		carga esfericamente simétricas.}
+	\end{table}
+\end{frame}
+
+\appendix
+
+\begin{frame}
+	\frametitle{Dedução da Transformada de Lorentz para os Campos}
+	Sendo os campos elétrico e magnético escritos em termos dos potenciais,
+	\begin{gather}
+		\vec{E} = - \nabla \Phi - \frac{\partial \vec{A}}{\partial t}, \\
+		\vec{B} = \nabla \times \vec{A},
+	\end{gather}
+	estes são escritos em forma explicitamente covariante usando o tensor
+	eletromagnético,
+	\begin{equation}
+		F^{\mu \nu} = \begin{pmatrix}
+			0 & -E_1 & -E_2 & -E_3 \\
+			E_1 & 0 & -B_3 & B_2 \\
+			E_2 & B_3 & 0 & -B_1 \\
+			E_3 & -B_2 & B_1 & 0
+		\end{pmatrix}.
+	\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Como escrevemos os Campos nas Coordenadas de $\Sigma$}
+	\begin{columns}
+
+	\column{0.5\textwidth}
+		Os campos como percebidos em $P$, no referencial $\Sigma '$ tem a forma
+		\begin{equation}
+			E_1 ' = -\frac{qvt'}{{r'} ^3}, \qquad E_2 ' = \frac{qb}{{r'}^3}.
+		\end{equation}
+		Escrevemos nas \textit{coordenadas} de $\Sigma$ usando,
+		\begin{gather}
+			t' = \gamma t, \\
+			\begin{split}
+				r ' &= \sqrt{b^2 + (v t')^2} \\
+					&= \sqrt{b^2 + v^2 \gamma ^2 t^2}.
+			\end{split}
+		\end{gather}
+
+	\column{0.5\textwidth}
+		Assim
+		\begin{gather}
+			E _1 '= - \frac{q\gamma vt}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}},\\
+			E _2 '= \frac{qb}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}},
+		\end{gather}
+		para os quais devemos aplicar a transformação de Lorentz.
+	\end{columns}
+\end{frame}
 
 
 \end{document}
