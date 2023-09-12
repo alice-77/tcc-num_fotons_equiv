@@ -8,7 +8,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-%\usepackage{axodraw2}
+\usepackage{axodraw2}
 \usepackage{subcaption}
 \usepackage{appendixnumberbeamer}
 \usepackage{multirow}
@@ -18,7 +18,7 @@
 \usetikzlibrary{snakes}
 
 % Uso de uma fonte especial que eu acho bonite
-\usepackage[condensed,math]{iwona}
+\usepackage[math]{iwona}
 %\usepackage{fourier}
 
 \usetikzlibrary{3d}
@@ -41,7 +41,7 @@
 \subtitle{Revisão e Aplicações}
 \author[A. A. S. Pacheco]{
 	Alfredo Achterberg S. Pacheco\\
-	{\footnotesize Orientado por: Prof.  Dr. Werner Krambeck Sauter}\\
+	{\footnotesize Orientador: Prof.  Dr. Werner Krambeck Sauter}\\
 	{\scriptsize Defesa da Proposta de Trabalho de Conclusão de Curso}
 }
 \institute[UFPel]{
@@ -138,14 +138,11 @@
 \end{frame}
 
 \section{Objetivos do Trabalho}
-
 \begin{frame}
 	\frametitle{Objetivos do Trabalho}
-
 	Para a realização do trabalho propomos uma revisão bibliográfica com cálculo
 	analítico e computacional de quantidades de interesse dos processos de
 	colisão. Para isso, temos os seguintes objetivos específicos:
-
 	\begin{enumerate}
 		\item realizar a revisão bibliográfica do método;
 		\item realizar o cálculo do fator de forma para o fator de forma
@@ -359,16 +356,14 @@
 	\frametitle{Demonstração do Método para Carga Pontual}
 	O número de fótons total é dado pela integral de $N(\omega , b)$ sobre os
 	parâmetros de impacto,
-	\begin{equation}
-	\begin{split}
-		n(\omega) &= \int _{b_{\text{min}}}^\infty db\; bN(\omega , b) \\ 
-		&= \frac{1}{\pi} \frac{2q^2}{\beta ^2} \frac{1}{\omega} \left\{ \xi
-		_\text{min} K_0 \left( \xi \right) K_1 \left( \xi _\text{min} \right) -
+	\begin{multline}
+		n(\omega) = \int _{b_{\text{min}}}^\infty db\; bN(\omega , b)  
+		= \frac{1}{\pi} \frac{2q^2}{\beta ^2} \frac{1}{\omega} \biggl\{ \xi
+		_\text{min} K_0 \left( \xi \right) K_1 \left( \xi _\text{min} \right) - \\
 		\frac{\beta ^2}{2} \xi _\text{min} ^2 \left[ K_1 ^2 \left( \xi
 		_\text{min} \right) - K_0 ^2 \left( \xi _\text{min} \right) \right]
-		\right\}, \label{eq_EPT}
-	\end{split}
-	\end{equation}
+		\biggr\}. \label{eq_EPT}
+	\end{multline}
 \end{frame}
 
 \section{Sobre o Fator de Forma}
@@ -413,6 +408,40 @@
 		\caption{Fatores de forma disponíveis para diferentes distribuições de
 		carga esfericamente simétricas.}
 	\end{table}
+\end{frame}
+
+
+\section{Colisões Ultraperiféricas}
+\begin{frame}
+	\frametitle{Colisões Ultraperiféricas}
+	\begin{itemize}
+		\item Possuem alto parâmetro de impacto $b$.
+		\item A interação é predominantemente eletromagnética.
+		\item Estados finais tem baixa multiplicidade $\rightarrow$ dados
+			experimentais mais limpos!
+		\item Fenômenos de interesse ocorrem como a produção de partículas por
+			colisão de fótons.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Colisões Ultraperiféricas}
+	\begin{figure}
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\input{./figs/photoproduction1_fig.tex}
+			\caption{Processo de excitação do íon $Z_2$ pelo fóton $\gamma$ e
+			produção do estado final $X$.}
+		\end{subfigure}
+		\hspace{0.25cm}
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\input{./figs/photoproduction2_fig.tex}
+			\caption{Processo de produção do estado $X$ por colisão dos fótons $\gamma$.}
+		\end{subfigure}
+		\caption{Fenômenos de fotoprodução de estados $X$.}
+	\end{figure}
+
 \end{frame}
 
 \appendix
