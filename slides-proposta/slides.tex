@@ -50,6 +50,8 @@
 \date[25 de set., 2023]{25 de Setembro, 2023}
 \titlegraphic{
 	\includegraphics[height=1.5cm]{./logos/logoUFPEL.png}
+	\hspace{1cm}
+	\includegraphics[height=1.5cm]{./logos/logoFISICA.jpg}
 }
 %\logo{\includegraphics[width=0.15\textwidth]{logoUFPel.png}}
 
@@ -176,26 +178,18 @@
 
 \begin{frame}
 	\frametitle{Seção de Choque Diferencial e Total}
-	\begin{columns}
-	\column{0.5\textwidth}
-		Da figura temos as diferenciais,
-		\begin{gather}
-			d\sigma = |b\, db\, d\phi|,\\
-			d\Omega = |\sen \theta \, d\theta \, d\phi|.
-		\end{gather}
-		A razão entre as duas é,
-		\begin{equation}
-			\frac{d\sigma}{d\Omega} = \bigg| \frac{b}{\sen \theta}
-			\frac{db}{d\theta} \bigg|. \label{diff_cross_section}
-		\end{equation}
-		Que é a seção de choque diferencial.
+	Da figura temos as diferenciais,
+	\begin{gather}
+		d\sigma = |b\, db\, d\phi|,\\
+		d\Omega = |\sen \theta \, d\theta \, d\phi|, \\ \Rightarrow
+		\frac{d\sigma}{d\Omega} = \bigg| \frac{b}{\sen \theta}
+		\frac{db}{d\theta} \bigg|. \label{diff_cross_section}
+	\end{gather}
 
-	\column{0.5\textwidth}
-		A seção de choque total vem pela integral sobre $\Omega$,
-		\begin{equation}
-			\sigma = \int \frac{d\sigma}{d\Omega} \sen \theta \, d\theta \, d\phi .
-		\end{equation}
-	\end{columns}
+	A seção de choque total vem pela integral sobre $\Omega$,
+	\begin{equation}
+		\sigma = \int \frac{d\sigma}{d\Omega} \sen \theta \, d\theta \, d\phi .
+	\end{equation}
 \end{frame}
 
 \begin{frame}
@@ -204,7 +198,6 @@
 		Estamos levando em conta uma partícula individual. Se quisermos tratar
 		um feixe de partículas, vamos precisar definir a \textit{luminosidade}.
 	\end{block}
-
 \end{frame}
 
 \begin{frame}
@@ -224,7 +217,6 @@
 \end{frame}
 
 \section{Demonstração do Método}
-
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
 	Inicialmente consideramos uma carga em movimento como abaixo.\footnote{A
@@ -255,8 +247,8 @@
 		B_3' = \gamma(B_3 - \beta E_2)
 		\end{cases},
 	\end{equation}
-	sendo $\gamma = (1-\beta ^2)^{-1/2}$ e $\beta = v/c$ os parâmetros
-	relativísticos da partícula.
+	sendo $\displaystyle \gamma = \frac{1}{\sqrt{1-\beta ^2}}$ e $\beta = v/c$
+	os parâmetros relativísticos da partícula.
 \end{frame}
 
 \begin{frame}
@@ -360,8 +352,9 @@
 	\begin{multline}
 		n(\omega) = \int _{b_{\text{min}}}^\infty db\; bN(\omega , b)  
 		= \frac{1}{\pi} \frac{2q^2}{\beta ^2} \frac{1}{\omega} \biggl\{ \xi
-		_\text{min} K_0 \left( \xi \right) K_1 \left( \xi _\text{min} \right) - \\
-		\frac{\beta ^2}{2} \xi _\text{min} ^2 \left[ K_1 ^2 \left( \xi
+		_\text{min} K_0 \left( \xi \right) K_1 \left( \xi _\text{min} \right) 
+		\\
+		-\frac{\beta ^2}{2} \xi _\text{min} ^2 \left[ K_1 ^2 \left( \xi
 		_\text{min} \right) - K_0 ^2 \left( \xi _\text{min} \right) \right]
 		\biggr\}. \label{eq_EPT}
 	\end{multline}
@@ -379,7 +372,8 @@
 		\Bigg|^2. \label{eq_EP-SPEC-F}
 	\end{equation}
 	O fator de forma $F(|\vec{q}|)$ é a transformada de Fourier da distribuição
-	de carga $f(\vec{r})$.
+	de carga $f(\vec{r})$. $\vec{q}$ aqui é a tranferência de momento na
+	colisão.
 \end{frame}
 
 \begin{frame}
@@ -464,6 +458,17 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Colisões Ultraperiféricas}
+	\begin{itemize}
+		\item Energia (a frequência $\omega$) e parâmetro de impacto mínimo
+			são relacionados aos parâmetros dos experimentos de colisão;
+		\item Destacamos a luminosidade e a energia máxima de colisão
+			$\displaystyle \omega _\text{max} \sim \frac{\gamma v}{b}$;
+		\item Estes são relacionados com
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Agradecimentos}
 	\begin{center}
 	\includegraphics[width=2cm]{./logos/logoFNDE.png}
@@ -473,7 +478,6 @@
 \end{frame}
 
 \appendix
-
 \begin{frame}
 	\frametitle{Dedução da Transformada de Lorentz para os Campos}
 	Sendo os campos elétrico e magnético escritos em termos dos potenciais,
