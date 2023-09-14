@@ -89,9 +89,9 @@
 	\frametitle{Introdução e Contextualização}
 	Estudos desse tipo de processo tem longa história na física.
 	\begin{itemize}
-		\item Como exemplo o trabalho de decréscimo de velocidade de partículas
-			$\alpha$ e $\beta$ em meios materiais por N. Bohr;
-		\item nesse trabalho, o físico propôs que a interação de partículas
+		\item O trabalho de decréscimo de velocidade de partículas $\alpha$ e
+			$\beta$ em meios materiais por N. Bohr, realizado em 1913;
+		\item este propôs que a interação de partículas
 			carregadas pode ser entendida pelo fenômeno eletromagnético de
 			dispersão (uma analogia);
 		\item em 1924, E. Fermi propôs que os campos de uma partícula carregada
@@ -104,14 +104,12 @@
 	\frametitle{Introdução e Contextualização}
 	\begin{columns}
 	\column{0.6\textwidth}
-		Disso, E. J. Williams, em 1933, propôs a generalização relativística do que
-		seria o método dos fótons equivalentes.
+		Disso, E. J. Williams, em 1933, propôs a generalização relativística do
+		que seria o método dos fótons equivalentes.
 		\begin{itemize}
-			\item O método consiste, de forma introdutória, em obter o número de 
-				fótons virtuais do campo eletromagnético de uma partícula a
-				partir da transformada de Fourier dos mesmos campos;
-			\item este consiste de uma aproximação \textit{semi-clássica} para
-				o cálculo desses fótons virtuais.
+			\item consiste em obter o número de fótons virtuais a partir da 
+				transformada de Fourier dos campos $\vec{E}$ e $\vec{B}$;
+			\item este consiste de uma aproximação \textit{semi-clássica}.
 		\end{itemize}
 
 	\column{0.4\textwidth}
@@ -125,17 +123,16 @@
 
 \begin{frame}
 	\frametitle{Introdução e Contextualização}
-	Desde tais desenvolvimentos, este método aproximativo teve maior aplicação e
-	desenvolvimentos na área de interação nuclear e de partículas fundamentais.
 	\begin{itemize}
-		\item Em especial, focaremos nas colisões ultraperiféricas de íons;
+		\item Há motivação para o estudo do método nas áreas de interação
+			nuclear e de partículas;
+		\item focaremos nas colisões ultraperiféricas de íons;
 		\item são colisões com maior distância (parâmetro de impacto) e com
 			interação dominantemente eletromagnética;
-		\item pela interação ser eletromagnética também há menos multiplicidade
-			nos estados finais e os resultados experimentais são mais facilmente
-			tratados;
-		\item fenômenos de interesse nesses processos incluem a produção de
-			pares de partículas a partir de colisões de fótons.
+		\item por conta disso, também há menos multiplicidade nos estados
+			finais e os resultados experimentais são mais facilmente tratados;
+		\item fenômenos de interesse incluem a produção de pares de partículas
+			a partir de colisões de fótons.
 	\end{itemize}
 \end{frame}
 
@@ -190,14 +187,11 @@
 	\begin{equation}
 		\sigma = \int \frac{d\sigma}{d\Omega} \sen \theta \, d\theta \, d\phi .
 	\end{equation}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Seção de Choque Diferencial e Total}
 	\begin{block}{Isto para uma partícula incidente individual!}
 		Estamos levando em conta uma partícula individual. Se quisermos tratar
 		um feixe de partículas, vamos precisar definir a \textit{luminosidade}.
 	\end{block}
+
 \end{frame}
 
 \begin{frame}
@@ -464,8 +458,69 @@
 			são relacionados aos parâmetros dos experimentos de colisão;
 		\item Destacamos a luminosidade e a energia máxima de colisão
 			$\displaystyle \omega _\text{max} \sim \frac{\gamma v}{b}$;
-		\item Estes são relacionados com
+		\item Estes são relacionados com a quantidade de íons por feixe e a
+			energia máxima com que estes colidem.
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Colisões Ultraperiféricas}
+	
+	\begin{table}
+		\begin{tabular}{lccc}
+			\hline
+			Íons & Acelerador & $\omega _\text{max}$ & $\mathcal{L}$
+				[$10^{30}$cm$^{-2}$s$^{-1}$]\\
+			\hline
+			\multirow{3}{4em}{$e^+ \; e^-$} & VEPP (Novosibirsk) & 6,0 GeV & 20
+			\\
+			& BEPC-II (China) & 1,89 GeV & 1000 \\
+			& CESR-C (Cornwell) & 6,0 GeV & 76 \\
+			$p \; p$ & LHC (CERN) & 6,5 TeV & 2,11 $\cdot 10^{4}$ \\
+			$p \; \bar{p}$ & TEVATRON (Fermilab) & 0,980 TeV & 431 \\
+			$Au \; Au$ & RHIC (Brookhaven) & 0,1 TeV & 8,7 \\
+			$p \; Au$ & RHIC & 0,1 TeV & 450 \\
+			$Xe \; Xe$ & LHC & 2,72 TeV & 0,4 \\
+			\hline
+		\end{tabular}
+		\caption{Parâmetros de experimentos de alguns colisores.}
+	\end{table}
+\end{frame}
+
+\section{Metodologia}
+\begin{frame}
+	\frametitle{Metodologia}
+	\begin{itemize}
+		\item Revisão mais aprofundada da literatura sobre os temas discutidos;
+		\item refazer os cálculos analíticos para as quantidades de interesse;
+		\item obter as curvas teóricas e realizar cálculos computacionais com
+			auxílio da biblioteca GSL (\textit{ Gnu Scientific Library}) para
+			C++.
+	\end{itemize}
+\end{frame}
+
+\section{Cronograma}
+\begin{frame}
+	\frametitle{Cronograma}
+	\begin{table}
+		\begin{tabular}{lccccc}
+			\hline
+			& Mês 1 & Mês 2 & Mês 3 & Mês 4 & Mês 5\\
+			\hline \hline
+			1) Revisão bibliográfica & $\times$ & $\times$ & $\times$ &
+			$\times$ & \\
+			2) Dedução dos $F(|\vec{q}|)$ & $\times$
+				 & $\times$ & $\times$ & & \\
+			3) Cálculo de $N(\omega, b)$ e $n(\omega)$ & & $\times$ & $\times$
+			& $\times$ & \\
+			4) Obtenção das $\sigma$ & & $\times$ &
+			$\times$ & $\times$ & \\
+			5) Redação do TCC & & & $\times$ & $\times$ & $\times$ \\
+			6) Defesa do TCC & & & & & $\times$ \\
+			\hline
+		\end{tabular}
+		\caption{Cronograma a ser seguido.}
+	\end{table}
 \end{frame}
 
 \begin{frame}
