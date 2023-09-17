@@ -28,6 +28,7 @@
 \usetheme{Madrid}
 
 \definecolor{azulUFPel}{rgb}{0.0, 0.25, 0.55}
+\definecolor{darkBlue}{HTML}{458588}
 \usecolortheme[named=azulUFPel]{structure}
 \usefonttheme{serif}
 
@@ -101,7 +102,7 @@
 \begin{frame}
 	\frametitle{Introdução e Contextualização}
 	\begin{columns}
-	\column{0.6\textwidth}
+	\column{0.5\textwidth}
 		Disso, E. J. Williams, em 1933, propôs a generalização relativística do
 		que seria o método dos fótons equivalentes.
 		\begin{itemize}
@@ -110,11 +111,11 @@
 			\item este consiste de uma aproximação \textit{semi-clássica}.
 		\end{itemize}
 
-	\column{0.4\textwidth}
+	\column{0.5\textwidth}
 		\begin{figure}
 			\input{./figs/relativistic_ions-tikzgraph.tex}
 			\caption{Esquema representando os campos relativísticos de dois íons
-			$Z_1$ e $Z_2$}
+			$Z_1$ e $Z_2$. Adaptado de \cite{bertulani2005}.}
 		\end{figure}
 	\end{columns}
 \end{frame}
@@ -167,7 +168,7 @@
 		\label{fig_cross_section}
 		\caption{Partícula adentrando a região de espalhamento por uma
 		seção de área $d\sigma$ e  sendo espalhada em um ângulo sólido
-		$d\Omega$.}
+		$d\Omega$. Retirado de \cite{griffiths_particle}.}
 	\end{figure}
 \end{frame}
 
@@ -218,7 +219,7 @@
 	\caption{Carga $q$ em movimento com velocidade $\vec{v}$ passando por um
 		ponto de observação $P$ com parâmetro de impacto $b$ e distância $r$.
 		Referencial $\Sigma$ é solidário ao ponto $P$ e $\Sigma '$ é solidário
-		à carga pontual $q$.}
+		à carga pontual $q$. Adaptado de \cite{jackson3}.}
 	\end{figure}
 \end{frame}
 
@@ -279,7 +280,7 @@
 		\end{subfigure}
 		\caption{Aproximação chave do método dos fótons virtuais é a de
 		substituir os campos elétrico e magnético por pulsos de radiação
-		equivalentes.}
+		equivalentes. Ambas as figuras adaptadas de \cite{caruso_quanta}.}
 	\end{figure}
 \end{frame}
 
@@ -393,7 +394,7 @@
 			\hline
 		\end{tabular}
 		\caption{Fatores de forma disponíveis para diferentes distribuições de
-		carga esfericamente simétricas.}
+		carga esfericamente simétricas. Tabela retirada de \cite{povh6ed}.}
 	\end{table}
 \end{frame}
 
@@ -427,7 +428,8 @@
 			\caption{Processo de produção do estado $X$ por colisão dos fótons
 			$\gamma$.}
 		\end{subfigure}
-		\caption{Fenômenos de fotoprodução de estados $X$.}
+		\caption{Fenômenos de fotoprodução de estados $X$. Ambas as figuras retiradas
+		de \cite{bertulani2005}.}
 	\end{figure}
 \end{frame}
 
@@ -440,7 +442,7 @@
 		\begin{gather}
 			\sigma _X = \int d\omega \; \frac{n(\omega)}{\omega} \sigma _X
 			^\gamma (\omega) \\
-			\sigma _{Z_1 Z_2 \rightarrow X} = \int d\omega \;
+			\sigma _{Z_1 Z_2 \rightarrow X} = \int d\omega _1 d\omega _2 \;
 			\frac{n(\omega _1)}{\omega _1} \frac{n(\omega _2)}{\omega _2}
 			\sigma_{\gamma \gamma \rightarrow X}(\omega _1, \omega _2),
 		\end{gather}
@@ -463,7 +465,6 @@
 
 \begin{frame}
 	\frametitle{Colisões Ultraperiféricas}
-	
 	\begin{table}
 		\begin{tabular}{lccc}
 			\hline
@@ -481,7 +482,8 @@
 			$Xe \; Xe$ & LHC & 2,72 TeV & 0,4 \\
 			\hline
 		\end{tabular}
-		\caption{Parâmetros de experimentos de alguns colisores.}
+		\caption{Parâmetros de experimentos de alguns colisores. Tabela baseada em 
+		\cite{Workman2022ynf}.}
 	\end{table}
 \end{frame}
 
@@ -524,10 +526,16 @@
 \begin{frame}
 	\frametitle{Agradecimentos}
 	\begin{center}
-	\includegraphics[width=2cm]{./logos/logoFNDE.png}
-	\hspace{2cm}
-	\includegraphics[width=2cm]{./logos/logoPET.png}
+		\includegraphics[width=2cm]{./logos/logoFNDE.png}
+		\hspace{2cm}
+		\includegraphics[width=2cm]{./logos/logoPET.png}
 	\end{center}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Referências}
+	\bibliographystyle{apalike}
+	\bibliography{./../docs/bibtex.bib}  
 \end{frame}
 
 \appendix
