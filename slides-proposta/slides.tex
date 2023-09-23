@@ -28,15 +28,13 @@
 \usetheme{Madrid}
 
 \definecolor{azulUFPel}{rgb}{0.0, 0.25, 0.55}
-\definecolor{darkBlue}{HTML}{252E48}
-\definecolor{darkGreen}{HTML}{0E3523}
-\definecolor{darkRed}{HTML}{7D2827}
 
 \usecolortheme[named=azulUFPel]{structure}
 \usefonttheme{serif}
 
 % Uns trecos que eu fiz pra ficar mais ao meu gosto estético
 \setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[square]
 \setbeamertemplate{enumerate item}[square]
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{section in toc}[circle]
@@ -225,8 +223,39 @@
 
 \begin{frame}
 	\frametitle{Demonstração do Método para Carga Pontual}
-	Para o caso com velocidade da partícula em $x_1$, a transformação de
-	Lorentz dos campos é,
+	Os campos $\vec{E}$ e $\vec{B}$ são escritos em forma explicitamente
+	covariante usando o tensor eletromagnético,
+	\begin{equation}
+		F^{\mu \nu} = \begin{pmatrix}
+			0 & -E_1 & -E_2 & -E_3 \\
+			E_1 & 0 & -B_3 & B_2 \\
+			E_2 & B_3 & 0 & -B_1 \\
+			E_3 & -B_2 & B_1 & 0
+		\end{pmatrix}.
+	\end{equation}
+	A tranformada de Lorentz das componentes deste tensor é dada por,
+	\begin{equation}
+		{F'}^{\mu \nu} = \frac{\partial {x'}^\mu}{\partial x^ \alpha}
+		\frac{\partial {x'}^\nu}{\partial x^\beta}F^{\alpha \beta} = \Lambda
+		^\mu _\alpha \Lambda ^\nu _\beta F^{\alpha \beta}.
+	\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Demonstração do Método para Carga Pontual}
+	$\Lambda^\mu _\nu$ são as componentes da matriz de transformação de Lorentz,
+	dada, para o nosso caso, como,
+	\begin{equation}
+		(\Lambda ^\mu _\nu) = \begin{pmatrix}
+			\gamma & -\gamma \beta & 0 & 0 \\
+			-\gamma \beta & \gamma & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1
+		\end{pmatrix},
+	\end{equation}
+	sendo $\displaystyle \gamma = \frac{1}{\sqrt{1-\beta ^2}}$ e $\beta = v/c$
+	os parâmetros relativísticos da partícula. O cálculo dos termos não nulos
+	leva a,
 	\begin{equation}
 		\label{eq_field_trans}
 		\begin{cases}
@@ -238,10 +267,8 @@
 		B_1 ' = B_1 \\
 		B_2 ' = \gamma (B_2 + \beta E_3) \\
 		B_3' = \gamma(B_3 - \beta E_2)
-		\end{cases},
+		\end{cases}.
 	\end{equation}
-	sendo $\displaystyle \gamma = \frac{1}{\sqrt{1-\beta ^2}}$ e $\beta = v/c$
-	os parâmetros relativísticos da partícula.
 \end{frame}
 
 \begin{frame}
@@ -463,7 +490,13 @@
 	\frametitle{Metodologia}
 	\begin{itemize}
 		\item Revisão mais aprofundada da literatura sobre os temas discutidos;
-		\item refazer os cálculos analíticos para as quantidades de interesse;
+		\item refazer os cálculos analíticos para as quantidades de interesse
+			nos casos em que for possível:
+			\begin{itemize}
+				\item Fatores de forma $F(|\vec{q}|)$;
+				\item números de fótons $N(\omega ,b)$ e $n(\omega)$;
+				\item seções de choque $\sigma$.
+			\end{itemize}
 		\item obter as curvas teóricas e realizar cálculos computacionais com
 			auxílio da biblioteca GSL (\textit{Gnu Scientific Library}) para
 			C++.
@@ -481,6 +514,12 @@
 	}
 \end{frame}
 
+\begin{frame}[allowframebreaks]
+	\frametitle{Referências}
+	\bibliographystyle{apalike}
+	\bibliography{./../docs/bibtex.bib}  
+\end{frame}
+
 \begin{frame}
 	\frametitle{Agradecimentos}
 	\begin{center}
@@ -488,12 +527,6 @@
 		\hspace{2cm}
 		\includegraphics[width=2cm]{./logos/logoPET.png}
 	\end{center}
-\end{frame}
-
-\begin{frame}[allowframebreaks]
-	\frametitle{Referências}
-	\bibliographystyle{apalike}
-	\bibliography{./../docs/bibtex.bib}  
 \end{frame}
 
 \appendix
