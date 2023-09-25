@@ -149,22 +149,7 @@ magnético, respectivamente,
 	$\Sigma$ e $\Sigma '$, além da direção e sentido da velocidade ($\vec{v}$)
 	da carga. \label{fig_charge-passing}}
 	\captionsetup{width=\textwidth}
-	\begin{tikzpicture}[thick]
-		% A caceta dos eixos...
-			\draw[-] (0,0) --  (13,0)node[below right]{$x_1$};
-			\draw[-] (0,0) -- (0,4) node[above]{$x_2$};
-			\draw[-] (0,0) -- (0,0,3) node[below left]{$x_3$};
-			\draw[-] (5,0.4) -- (13.5,0.4) node[right]{$x'_1$};
-			\draw[-] (5,0.4) -- (5,4) node[above]{$x' _2$};
-			\draw[-] (5,0.4) -- (5,0.2,3) node[below left]{$x'_3$};
-
-		% A caceta dos desenhos que importam
-			\filldraw (5,0.4) circle(3pt) node[above right] {$q$};
-			\filldraw (0,3) circle(3pt) node[above right] {$P$};
-			\draw (0,3) -- node[above]{$r$} (5,0.4);
-			\draw[|-|,dashed] (-0.3,0) -- node[fill=white]{$b$} (-0.3,3);
-			\draw[->,ultra thick] (5,0.4) -- (7,0.4) node[above]{$\vec{v}$};
-	\end{tikzpicture}
+	\input{./figs/passing_charge_tikz.tex}
 	\fonte{Adaptado de \cite{jackson3}.}
 \end{figure}
 
@@ -194,19 +179,19 @@ transformados,
 	B_3 (t) = \beta E_2(t) \label{eq_field3}.
 \end{gather}
 
-O método dos fótons equivalentes consiste em aproximar a
-interação desses campos a partir de dois pulsos, um na direção de $x_1$,
-paralelo à direção de $\vec{v}$, e outro na direção de $x_2$, perpendicular à
-esta \cite{caruso_quanta}. Isso se baseia no fato de que, analisando os campos (\ref{eq_field1}),
-(\ref{eq_field2}) e (\ref{eq_field3}), podemos notar que há formação de um
-pulso na direção\footnote{Isso é verificável pelo cálculo do vetor de Poynting
-desse pulso de onda, sendo $\vec{S} = \vec{E}\times \vec{B}$ \cite{jackson3}.}
-$x_1$ pelos campos $E_2$ e $B_3$ que denotamos de $P_1$.  Ainda assim, o campo
-$E_1$ não forma pulso. É de nosso interesse que possamos construir um estudo do
-fenômeno somente a partir de pulsos. Para tanto podemos inserir um campo magnético
-artificial, como aproximação, de forma a gerar um pulso $P_2$ na direção de
-$x_2$, desde que os movimentos das cargas constituintes do alvo não sejam
-relativísticos no referencial \cite{jackson3}.
+O método dos fótons equivalentes consiste em aproximar a interação desses
+campos a partir de dois pulsos, um na direção de $x_1$, paralelo à direção de
+$\vec{v}$, e outro na direção de $x_2$, perpendicular à esta
+\cite{caruso_quanta}. Isso se baseia no fato de que, analisando os campos
+(\ref{eq_field1}), (\ref{eq_field2}) e (\ref{eq_field3}), podemos notar que há
+formação de um pulso na direção\footnote{Isso é verificável pelo cálculo do
+vetor de Poynting desse pulso de onda, sendo $\vec{S} = \vec{E}\times \vec{B}$
+\cite{jackson3}.} $x_1$ pelos campos $E_2$ e $B_3$ que denotamos de $P_1$.
+Ainda assim, o campo $E_1$ não forma pulso. É de nosso interesse que possamos
+construir um estudo do fenômeno somente a partir de pulsos. Para tanto podemos
+inserir um campo magnético artificial, como aproximação, de forma a gerar um
+pulso $P_2$ na direção de $x_2$, desde que os movimentos das cargas
+constituintes do alvo não sejam relativísticos no referencial \cite{jackson3}.
 
 Assim, a energia por unidade de área e frequência de um determinado
 pulso, no caso $P_1$ e $P_2$, é dada nas formas,
@@ -218,19 +203,19 @@ onde $E_1 (\omega)$ e $E_2 (\omega)$ são as transformadas de Fourier dos campos
 $E_1(t)$ e $E_2 (t)$, respectivamente. Iremos calcular a trasformada para o
 pulso $P_1$ primeiramente. Assim, para $E_2 (\omega)$, temos,
 \begin{equation}
-	E_2 (\omega) = \frac{1}{\sqrt{2\pi}} \int _{-\infty} ^{+\infty} dt \; E_2 (t)
-	e^{i\omega t} = \frac{1}{\sqrt{2\pi}} \int _{-\infty} ^{+\infty} dt \; \left[
-		\frac{q \gamma b e^{i\omega t}}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}}
+	E_2 (\omega) = \frac{1}{\sqrt{2\pi}} \int _{-\infty} ^{+\infty} dt \; E_2
+	(t) e^{i\omega t} = \frac{1}{\sqrt{2\pi}} \int _{-\infty} ^{+\infty} dt \;
+	\left[ \frac{q \gamma b e^{i\omega t}}{(b^2 + \gamma ^2 v^2 t^2)^{3/2}}
 	\right],
 \end{equation}
 que é a transformada de Fourier \cite{arfken7ed}. Com isso, usamos a
 substituição de variável de integração $u = \gamma vt/b$, onde $du = (\gamma
 v/b) dt$. Com isso temos o seguinte,
 \begin{equation}
-	E_2 (\omega) = \frac{1}{\sqrt{2\pi}} \int _{-\infty} ^{+ \infty} du\; \frac{qb^2}{v}
-	\frac{\exp (i\omega b u/ \gamma v)}{(b^2 + b^2 u^2)^{3/2}} = \frac{1}{\sqrt{2\pi}}
-	\frac{q}{vb} \int _{-\infty}^{+\infty} du \; \frac{\exp (i \omega b u/ \gamma v)}{
-		(1+ u^2)^{3/2}}.
+	E_2 (\omega) = \frac{1}{\sqrt{2\pi}} \int _{-\infty} ^{+ \infty} du\;
+	\frac{qb^2}{v} \frac{\exp (i\omega b u/ \gamma v)}{(b^2 + b^2 u^2)^{3/2}} =
+	\frac{1}{\sqrt{2\pi}} \frac{q}{vb} \int _{-\infty}^{+\infty} du \;
+	\frac{\exp (i \omega b u/ \gamma v)}{ (1+ u^2)^{3/2}}.
 \end{equation}
 Definindo o parâmetro $\xi \equiv \omega b / \gamma v$, e usando a identidade
 de Euler, $e ^{i\theta} = \cos \theta + i \sen \theta$, podemos escrever para a
@@ -380,28 +365,11 @@ uma distribuição pontual, $F$ é uma constante ($F(|\vec{q}|^2) = 1$).
 
 \begin{table}[h]
 	\IBGEtab{
-		\caption{Diferentes fatores de forma obtidos para diferentes distribuições
-		de carga esfericamente simétricas.}
+		\caption{Diferentes fatores de forma obtidos para diferentes
+		distribuições de carga esfericamente simétricas.}
 		\label{tab_charge-distribution}
 	}{
-		\begin{tabular}{cc|cc}
-			\toprule 
-			\multicolumn{2}{c}{$f(r)$} & \multicolumn{2}{c}{$F(|\vec{q}|)$} \\
-			\midrule
-			Pontual & $\delta (r) / 4 \pi$ & 1 & Constante \\
-			Exponencial & $\displaystyle \frac{a^3}{8\pi} e^{-ar}$ &
-			$\displaystyle \left(\frac{1 + |\vec{q}|^2}{a^2}\right) ^{-2}$ &
-			Dipolo \\
-			Gaussiana & $ \left( a^2 / 2\pi \right)^{3/2} e
-			^{-a^2 r^2 / 2}$ & $e^{|\vec{q}|^2 / 2a^2 }$ & Gaussiana \\
-			Esfera homogênea & $\displaystyle \begin{cases}
-				3/4\pi R^3, & r \leq R \\
-				0, & r > R
-			\end{cases}$ & $ \displaystyle \frac{3(\sen \alpha - \alpha \cos
-			\alpha)}{\alpha}$, onde $\alpha = |\vec{q}| R$ &
-			Oscilante \\
-			\bottomrule
-		\end{tabular}
+		\input{./tables/form_factors.tex}
 	}{
 		\fonte{Retirado de \cite{povh6ed}.}
 	}
@@ -442,43 +410,16 @@ assim, a análise dos fluxos de partículas que são medidos.}.
 	\begin{subfigure}[b]{200pt}
 		\caption{Processo de excitação do íon por interação
 		fotonuclear.\label{fig-photo_excitation}}
-		\begin{axopicture}(200,100)
-			\Line[arrow](0,0)(100,25)
-			\Line[arrow](100,25)(200,0)
-			\Line[arrow](0,100)(100,75) \Line[arrow](100,75)(200,100)
-			\Photon(100,25)(100,75){3}{7}
-			\Line[arrow,double](100,25)(200,25)
-			\Vertex(100,25){4}
-			\Text(10,5)[rb]{$Z_2$}
-			\Text(10,95)[rt]{$Z_1$}
-			%\Text(190,5)[lb]{$Z_2$}
-			%\Text(190,95)[lt]{$Z_1$}
-			\Text(200,30)[rb]{$X$}
-			\Text(105,50)[l]{$\gamma$}
-		\end{axopicture}
+		\input{./figs/photon_excitation_axo.tex}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{200pt}
 		\caption{Processo de colisão $\gamma \gamma \rightarrow
 		X$.\label{fig-photo_pair}}
-		\begin{axopicture}(200,100)
-			\Line[arrow](0,0)(100,25)
-			\Line[arrow](100,25)(200,0)
-			\Line[arrow](0,100)(100,75)
-			\Line[arrow](100,75)(200,100)
-			\Photon(100,25)(100,75){3}{7}
-			\Line[arrow,double](100,50)(200,50)
-			\BCirc(100,50){7}
-			\Text(10,5)[rb]{$Z_2$}
-			\Text(10,95)[rt]{$Z_1$}
-			\Text(200,55)[rb]{$X$}
-			\Text(95,35)[r]{$\gamma$}
-			\Text(95,65)[r]{$\gamma$}
-		\end{axopicture}
+		\input{./figs/photon_collision_axo.tex}
 	\end{subfigure}
 	\fonte{Baseado em \cite{bertulani2005}.}
 \end{figure}
-
 
 Nas colisões ultraperiféricas, em geral, dois tipos de interações entre íons
 ocorrem \cite{bertulani2005}. É possível que um dos íons emita um
@@ -534,21 +475,7 @@ seção de choque.
 		dos feixes são aceleradas.}
 		\label{tab_ion-par}
 	}{
-	\begin{tabular}{lccc}
-		\toprule
-		Íons & Acelerador & Energia máxima por feixe & Luminosidade
-			($10^{30}$cm$^{-2}$s$^{-1}$)\\
-		\midrule 
-		\multirow{3}{4em}{$e^+ \; e^-$} & VEPP (Novosibirsk) & 6,0 GeV & 20 \\
-		& BEPC-II (China) & 1,89 GeV & 1000 \\
-		& CESR-C (Cornwell) & 6,0 GeV & 76 \\
-		$p \; p$ & LHC (CERN) & 6,5 TeV & 2,11 $\cdot 10^{4}$ \\
-		$p \; \bar{p}$ & TEVATRON (Fermilab) & 0,980 TeV & 431 \\
-		$Au \; Au$ & RHIC (Brookhaven) & 0,1 TeV & 8,7 \\
-		$p \; Au$ & RHIC & 0,1 TeV & 450 \\
-		$Xe \; Xe$ & LHC & 2,72 TeV & 0,4 \\
-		\bottomrule
-	\end{tabular}
+		\input{./tables/collision_labs.tex}
 	}{
 		\fonte{Adaptado de \cite{Workman2022ynf}.}
 	}
