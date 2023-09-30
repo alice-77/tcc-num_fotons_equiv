@@ -84,7 +84,7 @@
 %\usepackage{float}          % Permite travar as figuras usando o parametro [H]
 \usepackage{makeidx}         % Usar para criar indexação no texto
 \usepackage{lipsum}          % Cria um texto padrão para teste
-\usepackage{microtype} 	     % para melhorias de justificação
+%\usepackage{microtype} 	     % para melhorias de justificação
 \usepackage{icomma}          % para colocar espaços em números decimais com vírgula
 \usepackage{units}           % para o uso de frações
 %\usepackage{boxhandler}

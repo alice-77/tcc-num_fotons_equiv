@@ -1,4 +1,4 @@
-BASENAME=tccProposta
+BASENAME=tccRedacao
 
 PROGRAM_BIB=bibtex
 PROGRAM_AXO=axohelp

@@ -8,6 +8,19 @@
   brazil                % hifenizar palavras em português-brasileiro (padrão no abntex2). Deve ser incluída em caso de mais de um idioma.
 ]{fisufpel-abntex2}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{axodraw2}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+\usetikzlibrary{3d}
+\DeclareMathOperator*{\sen}{sen}
+\renewcommand{\vec}{\mathbf}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 %% Macros abntex2 para configuração do documento (autor, titulo, orientação ....)
@@ -32,8 +45,7 @@
 % 
 \local{Pelotas}  % cidade 
 %
-% Data: ano de depósito. A impressão é feita pela macro \imprimirdata da abntex2
-%
+% Data: ano de depósito. A impressão é feita pela macro \imprimirdata da abntex2 %
 \data{\the\year}  % ano de defesa, usado na capa. Pode ser passado um ano especifico: \data{2018}
 %
 % Instituição. A impressão é feita pela macro \imprimirinstituicao da abntex2 
@@ -135,11 +147,11 @@
 
 %\includepdf{folhadeaprovacao_digitalizada.pdf}   % Folha de Aprovação digitalizada (obrigatória para versão aprovada) 
 
-\include{./docs/dedicatoria}    % dedicatória (opcional)
-\include{./docs/agradecimentos} % agradecimentos (opcional)
-\include{./docs/epigrafe}       % epígrafe (opcional)
-\include{./docs/resumo}         % resumo (obrigatória apenas no TCC)
-\include{./docs/abstract}       % abstract (obrigatória apenas no TCC)
+%\include{./docs/dedicatoria}    % dedicatória (opcional)
+%\include{./docs/agradecimentos} % agradecimentos (opcional)
+%\include{./docs/epigrafe}       % epígrafe (opcional)
+%\include{./docs/resumo}         % resumo (obrigatória apenas no TCC)
+%\include{./docs/abstract}       % abstract (obrigatória apenas no TCC)
 %
 % LISTA DE FIGURAS, CÓDIGOS E TABELAS
 % ================================================
@@ -148,12 +160,12 @@
 %
 % não retirar a estrutura abaixo
 %
-\pdfbookmark[0]{\lstlistlistingname}{lol}
-\begin{KeepFromToc}  % comando KeepFromToc é usado para que a "Lista de códigos" não seja inseridas no Sumário. 
-\lstlistoflistings   % Lista de códigos fonte (opcional).
-                     % Usa pacote listings. O ambiente do código está definido para Fortran 90. 
-\end{KeepFromToc}
-\cleardoublepage
+%\pdfbookmark[0]{\lstlistlistingname}{lol}
+%\begin{KeepFromToc}  % comando KeepFromToc é usado para que a "Lista de códigos" não seja inseridas no Sumário. 
+%\lstlistoflistings   % Lista de códigos fonte (opcional).
+                    % Usa pacote listings. O ambiente do código está definido para Fortran 90. 
+%\end{KeepFromToc}
+%\cleardoublepage
 %
 
 \listoftables  % Lista de Tabelas (opcional)
@@ -161,11 +173,11 @@
 % ================================================
 % LISTA DE SIGLAS E ABREVIATURAS 
 % ==============================================================
-\include{./docs/abreviaturasesiglas}  % Lista de Abreviaturas e Siglas (opcional)
+%\include{./docs/abreviaturasesiglas}  % Lista de Abreviaturas e Siglas (opcional)
 % ==============================================================
 % LISTA DE SÍMBOLOS
 % ==============================================================
-\include{./docs/simbolos}   % Lista de Símbolos (opcional)
+%\include{./docs/simbolos}   % Lista de Símbolos (opcional)
 %
 % SUMÁRIO
 % ==============================================================
@@ -203,11 +215,7 @@
 %
 % ==============================================================================
 
-\include{./docs/capit01}   %% 1o capítulo, começo do texto e da numeração das páginas
-\include{./docs/capit02}   %% 2o capítulo 
-\include{./docs/capit03}   %% 3o capítulo 
-\include{./docs/capit04}   %% 4o capítulo 
-\include{./docs/capit05}   %% 5o capítulo
+\include{./docs/referencial_teorico}   %% 1o capítulo, começo do texto e da numeração das páginas
 
 %%
 %%    ELEMENTOS PÓS-TEXTUAIS
@@ -234,9 +242,9 @@
 
 \partapendices  % imprime uma folha contendo a expressão Apêndices centralizado na folha (exigido pela UFPel)
 
-\include{./docs/apendice1} 
-\include{./docs/apendice2}
-\include{./docs/apendice3}
+%\include{./docs/apendice1} 
+%\include{./docs/apendice2}
+%\include{./docs/apendice3}
 
 \end{apendicesenv}  % fim dos apêndices
 
@@ -248,7 +256,7 @@
 
 \partanexos   % imprime uma folha contendo a expressão Anexos centralizado na folha (exigido pela UFPel)
   
-\include{./docs/anexo1}
+%\include{./docs/anexo1}
 %\include{./docs/anexo2}
 
 \end{anexosenv} % fim dos anexos
