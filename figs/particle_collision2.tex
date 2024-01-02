@@ -1,0 +1,15 @@
+\begin{tikzpicture}[>=latex]
+	\draw (-2,0) [->] -- (-0.15,0);
+	\draw (0.15,0.15) [->, rotate around={45:(0.15,0.15)}] -- (2.0,0.15);
+	\draw (0.15,-0.15) [
+		thick, double distance=1pt, rotate around={-45:(0.15,-0.15)}, ->
+	] -- (0.8,-0.15);
+	\draw (0.75,-0.95)[->] -- (0.75,-2.25);
+	\draw (0.95,-0.75)[->] -- (2.25,-0.75);
+	\filldraw[black](-2.15,0) circle (0.1) node[above=3pt]{$a$};
+	\draw (0,0) circle (0.1) node[above=3pt]{$b$};
+	\filldraw (0.75,0.75) circle (0.1) node[right=3pt]{$a'$};
+	\draw (0.75,-0.75) circle (0.2) node[above right=2pt]{$b^*$};
+	\filldraw[black](0.75,-1.85) circle (0.1) node[left=2pt]{$c$};
+	\filldraw[black](1.85,-0.75) circle (0.1) node[below=2pt]{$d$};
+\end{tikzpicture}
